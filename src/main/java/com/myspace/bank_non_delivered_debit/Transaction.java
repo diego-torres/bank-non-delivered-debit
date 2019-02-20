@@ -17,6 +17,8 @@ public class Transaction implements java.io.Serializable {
 
 	private java.lang.Boolean matchesValue;
 
+	private java.lang.String outboundQueue;
+
 	public Transaction() {
 	}
 
@@ -60,14 +62,23 @@ public class Transaction implements java.io.Serializable {
 		this.matchesValue = matchesValue;
 	}
 
+	public java.lang.String getOutboundQueue() {
+		return this.outboundQueue;
+	}
+
+	public void setOutboundQueue(java.lang.String outboundQueue) {
+		this.outboundQueue = outboundQueue;
+	}
+
 	public Transaction(java.lang.String type, java.lang.Integer value,
 			java.lang.Boolean existsInAccount, java.lang.Boolean existsInLog,
-			java.lang.Boolean matchesValue) {
+			java.lang.Boolean matchesValue, java.lang.String outboundQueue) {
 		this.type = type;
 		this.value = value;
 		this.existsInAccount = existsInAccount;
 		this.existsInLog = existsInLog;
 		this.matchesValue = matchesValue;
+		this.outboundQueue = outboundQueue;
 	}
 
 }
