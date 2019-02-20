@@ -16,12 +16,12 @@ then
     modify($t){setOutboundQueue("GABETAS");}
 end
 
-rule "Gabetas modified"
+rule "Gabetas modified "
 when
     $t: Transaction( existsInAccount == true, existsInLog == true, matchesValue == false )
 then
     modify($t){
-        //setValue(operationHere);
+        setValue(Math.Abs(valueInAccount - valueInLog));
         setOutboundQueue("ALL_OK");
     }
 end
