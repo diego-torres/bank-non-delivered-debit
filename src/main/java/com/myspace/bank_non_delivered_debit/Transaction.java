@@ -19,6 +19,10 @@ public class Transaction implements java.io.Serializable {
 
 	private java.lang.String outboundQueue;
 
+	private java.lang.Integer valueInAccount;
+
+	private java.lang.Integer valueInLog;
+
 	public Transaction() {
 	}
 
@@ -70,15 +74,34 @@ public class Transaction implements java.io.Serializable {
 		this.outboundQueue = outboundQueue;
 	}
 
+	public java.lang.Integer getValueInAccount() {
+		return this.valueInAccount;
+	}
+
+	public void setValueInAccount(java.lang.Integer valueInAccount) {
+		this.valueInAccount = valueInAccount;
+	}
+
+	public java.lang.Integer getValueInLog() {
+		return this.valueInLog;
+	}
+
+	public void setValueInLog(java.lang.Integer valueInLog) {
+		this.valueInLog = valueInLog;
+	}
+
 	public Transaction(java.lang.String type, java.lang.Integer value,
 			java.lang.Boolean existsInAccount, java.lang.Boolean existsInLog,
-			java.lang.Boolean matchesValue, java.lang.String outboundQueue) {
+			java.lang.Boolean matchesValue, java.lang.String outboundQueue,
+			java.lang.Integer valueInAccount, java.lang.Integer valueInLog) {
 		this.type = type;
 		this.value = value;
 		this.existsInAccount = existsInAccount;
 		this.existsInLog = existsInLog;
 		this.matchesValue = matchesValue;
 		this.outboundQueue = outboundQueue;
+		this.valueInAccount = valueInAccount;
+		this.valueInLog = valueInLog;
 	}
 
 }
