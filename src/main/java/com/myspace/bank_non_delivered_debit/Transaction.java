@@ -6,12 +6,33 @@ package com.myspace.bank_non_delivered_debit;
 
 public class Transaction implements java.io.Serializable {
 
-    static final long serialVersionUID = 1L;
+	static final long serialVersionUID = 1L;
 
-    public Transaction() {
-    }
+	private java.lang.String type;
+	private java.lang.Integer value;
 
+	public Transaction() {
+	}
 
+	public java.lang.String getType() {
+		return this.type;
+	}
 
+	public void setType(java.lang.String type) {
+		this.type = type;
+	}
+
+	public java.lang.Integer getValue() {
+		return this.value;
+	}
+
+	public void setValue(java.lang.Integer value) {
+		this.value = value;
+	}
+
+	public Transaction(java.lang.String type, java.lang.Integer value) {
+		this.type = type;
+		this.value = value;
+	}
 
 }
