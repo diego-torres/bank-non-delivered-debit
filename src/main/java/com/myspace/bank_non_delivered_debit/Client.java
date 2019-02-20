@@ -6,12 +6,33 @@ package com.myspace.bank_non_delivered_debit;
 
 public class Client implements java.io.Serializable {
 
-    static final long serialVersionUID = 1L;
+	static final long serialVersionUID = 1L;
 
-    public Client() {
-    }
+	private java.lang.String name;
+	private java.lang.String folio;
 
+	public Client() {
+	}
 
+	public java.lang.String getName() {
+		return this.name;
+	}
 
+	public void setName(java.lang.String name) {
+		this.name = name;
+	}
+
+	public java.lang.String getFolio() {
+		return this.folio;
+	}
+
+	public void setFolio(java.lang.String folio) {
+		this.folio = folio;
+	}
+
+	public Client(java.lang.String name, java.lang.String folio) {
+		this.name = name;
+		this.folio = folio;
+	}
 
 }
