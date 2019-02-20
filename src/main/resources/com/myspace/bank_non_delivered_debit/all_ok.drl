@@ -1,2 +1,8 @@
 package com.myspace.bank_non_delivered_debit;
 
+rule "All OK"
+when
+    com.myspace.bank_non_delivered_debit.Transaction( existsInAccount == true, existsInLog == true, matchesValue == true )
+then
+    
+end
