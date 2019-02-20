@@ -6,5 +6,22 @@ rule "All OK"
 when
     $t: Transaction( existsInAccount == true, existsInLog == true, matchesValue == true )
 then
-    
+    modify($t){setOutboundQueue("ALL_OK");}
+end
+
+rule "Gabetas OK"
+when
+    $t: Transaction( existsInAccount == false, existsInLog == true, matchesValue == true )
+then
+    modify($t){setOutboundQueue("GABETAS");}
+end
+
+rule "Gabetas modified"
+when
+    $t: Transaction( existsInAccount == true, existsInLog == true, matchesValue == false )
+then
+    modify($t){
+        //setValue(operationHere);
+        setOutboundQueue("ALL_OK");
+    }
 end
